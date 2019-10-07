@@ -7,7 +7,7 @@
         %p.left-haeder__box__user-name
           = current_user.name
         %ul.left-haeder__box__menu
-          =link_to "https://www.facebook.com/", class: "left-header__box__menu_new-group" do
+          =link_to new_group_path, class: "left-header__box__menu_new-group" do
             = fa_icon 'edit'
           =link_to edit_user_path(current_user) , class: "left-header__box__menu_new-group" do
             = fa_icon 'cog'
