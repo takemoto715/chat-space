@@ -1,5 +1,4 @@
 
-
 .wrapper
   .left-contents
     .left-header
@@ -13,10 +12,12 @@
             = fa_icon 'cog'
     .groups
       .group
-        %p.group__group-name
-          test
-        %p.group__group-message
-          さようなら
+        - current_user.groups.each do |group|
+          = link_to group_messages_path(group) do
+            %p.group__group-name
+              = group.name
+            %p.group__group-message
+              まだメッセージはありません
   .main-contents
     .main-header
       .main-header__left-box
