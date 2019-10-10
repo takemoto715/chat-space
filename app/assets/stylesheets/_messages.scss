@@ -37,6 +37,8 @@
    }
 }
 
+
+
 .groups {
   height: calc(100vh - 100px);
   background-color: $groupcolor;
@@ -49,11 +51,15 @@
   &__group-name {
     font-size: 15px;
     margin-bottom: 5px;
+    color: white;   
   }
   &__group-message {
     font-size: 11px;
+    color: white;
+    margin-bottom: 40px;
   }
 }
+
 
 
 .messages {
@@ -81,6 +87,8 @@
     font-size: 14px;
   }
 }
+
+
 
 
 
