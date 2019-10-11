@@ -5,14 +5,13 @@
     .main-header
       .main-header__left-box
         %p.main-header__left-box__current-box 
-          sample
+          = @group.name
         %ul.main-header__left-box__menber-list
-          Member :
-          %li.main-header__left-box__member-list__member
-            seo
-          %li.main-header__left-box__member-list__member
-            neko
-      %input.edit-btn{name: "edit", type: "submit" , value: "Edit"}
+          Member : 
+          - @group.users.each do |user|
+            %li.main-header__left-box__member-list__member
+            = user.name
+      = link_to "Edit", edit_group_path(@group), method: :get, class: "edit-btn"
     .messages
       = render @messages
     .form
