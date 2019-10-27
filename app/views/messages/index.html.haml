@@ -10,7 +10,7 @@
           Member : 
           - @group.users.each do |user|
             %li.main-header__left-box__member-list__member
-            = user.name
+            = user.name    
       = link_to "Edit", edit_group_path(@group), method: :get, class: "edit-btn"
     .messages
       = render @messages

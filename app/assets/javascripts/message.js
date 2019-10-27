@@ -51,5 +51,6 @@ $(document).on('turbolinks:load', function() {
       }, 300, 'swing');
     })
   })
+
 });
 
