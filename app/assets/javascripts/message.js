@@ -50,8 +50,6 @@ $(document).on('turbolinks:load', function() {
         scrollTop: position
       }, 300, 'swing');
     })
-  });
-  $(function() {
       var reloadMessages = function() {
         if (window.location.href.match(/\/groups\/\d+\/messages/)){
         //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
