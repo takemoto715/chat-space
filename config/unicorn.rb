@@ -19,10 +19,7 @@ stderr_path "#{app_path}/log/unicorn.stderr.log"
 #通常のログを記録するファイルを指定
 stdout_path "#{app_path}/log/unicorn.stdout.log"
 
-#Railsアプリケーションの応答を待つ上限時間を設定
 timeout 60
-
-#以下は応用的な設定なので説明は割愛
 
 preload_app true
 GC.respond_to?(:copy_on_write_friendly=) && GC.copy_on_write_friendly = true
@@ -36,7 +33,7 @@ before_fork do |server, worker|
     ActiveRecord::Base.connection.disconnect!
 
   if run_once
-    run_once = false # prevent from firing again
+    run_once = false 
   end
 
   old_pid = "#{server.config[:pid]}.oldbin"
@@ -53,5 +50,3 @@ end
 after_fork do |_server, _worker|
   defined?(ActiveRecord::Base) && ActiveRecord::Base.establish_connection
 end
- 
-####
