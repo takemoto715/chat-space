@@ -39,8 +39,11 @@ $(document).on('turbolinks:load', function() {
       $('form')[0].reset();
       $('.submit-btn').prop("disabled", false)
     })
-    .fail(function(){
-      alert('messageか画像を入力してください')
+    .fail(function(message){
+      alert('messageか画像を入力してください');
+    })
+    .always(function(data){
+      $('.submit-btn').prop('disabled', false);
     })
   })
       var reloadMessages = function() {
@@ -56,7 +59,9 @@ $(document).on('turbolinks:load', function() {
           var insertHTML = '';
           messages.forEach(function (message){
             insertHTML = buildHTML(message);
+            $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
             $('.messages').append(insertHTML)
+            
           })
         })
         .fail(function () {
